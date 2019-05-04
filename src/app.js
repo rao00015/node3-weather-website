@@ -5,6 +5,7 @@ const hbs = require('hbs')
 const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 const request = require('request')
+const port = process.env.PORT || 3000
 
 //defining the paths for views directory
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -88,6 +89,6 @@ app.get('*', (req, res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () =>{
-    console.log('Server is running on port 3000')
+app.listen(port, () =>{
+    console.log('Server is running on port ' + port)
 })
